@@ -12,7 +12,7 @@
         height: auto;
 
     } */
-/* 
+
     .h-6.w-11 {
         background: #55b4a0;
     }
@@ -29,9 +29,15 @@
         background: #005974;
     }
 
-    .fi-sidebar-open {
+    /* .fi-sidebar-open {
         background: #00597408;
         padding-top: 0px !important;
+    } */
+    @media (min-width: 787px) {
+        .fi-sidebar-open {
+            background: #00597408;
+            padding-top: 0px !important;
+        }
     }
 
     .fi-tabs-item-active {
@@ -52,7 +58,7 @@
 
     .fi-tabs-item svg {
         color: #fff;
-    } */
+    }
 
     /* .fi-tabs-item-label {
         color:#ffffff
