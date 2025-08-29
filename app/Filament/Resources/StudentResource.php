@@ -92,7 +92,6 @@ class StudentResource extends Resource
                             ->collection('sop')
                             ->disableLabel()
                             ->multiple()
-                            ->disabled()
                             ->openable()
                             ->multiple()
                             ->downloadable()

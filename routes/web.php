@@ -16,10 +16,10 @@ Route::get('/', function () {
  Route::get('/reset-password/{token}', ResetPassword::class)->name('password.reset');
  
 
-//  Route::get('/test-email', function () {
-//     Mail::raw('This is a test email.', function ($message) {
-//         $message->to('rana.noman2110@yahoo.com')
-//                 ->subject('Test Email');
-//     });
-//     return 'Email Sent Successfully';
-// });
+ Route::get('/test-email', function () {
+    Mail::raw('This is a test email.', function ($message) {
+        $message->to('rana.noman3001@gmail.com')
+                ->subject('Test Email');
+    });
+    return 'Email Sent Successfully';
+});

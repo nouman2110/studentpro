@@ -58,27 +58,45 @@ class UserResource extends Resource
                     ])->columns(3),
     
                 Section::make('Agent Details')
-                    ->visible(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent')
+                    ->visible(function (Get $get) {
+                        $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                        return $roles->contains('Agent');
+                    })
                     ->schema([
                         TextInput::make('legal_name')
                             ->label('Legal Name')
-                            ->required(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent'),
+                           ->required(function (Get $get) {
+                                $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                                return $roles->contains('Agent');
+                            }),
     
                         TextInput::make('trading_name')
                             ->label('Trading Name')
-                            ->required(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent'),
+                           ->required(function (Get $get) {
+                                $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                                return $roles->contains('Agent');
+                            }),
     
                         TextInput::make('abn_reg_no')
                             ->label('ABN Registration No')
-                            ->required(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent'),
+                           ->required(function (Get $get) {
+                                $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                                return $roles->contains('Agent');
+                            }),
     
                         TextInput::make('address')
                             ->label('Address')
-                            ->required(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent'),
+                           ->required(function (Get $get) {
+                                $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                                return $roles->contains('Agent');
+                            }),
     
                         TextInput::make('phone')
                             ->label('Phone')
-                            ->required(fn (Get $get) => Role::find($get('roles'))?->name === 'Agent'),
+                           ->required(function (Get $get) {
+                                $roles = Role::whereIn('id', (array) $get('roles'))->pluck('name');
+                                return $roles->contains('Agent');
+                            }),
                     ])->columns(3),
             ]);
     }
